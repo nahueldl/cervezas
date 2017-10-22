@@ -89,7 +89,7 @@ _findViewById()_ es un método que nos permite acceder a los elementos definidos
 
 ---
 
-# Interfaces
+## Interfaces
 Parecidas a una "clase abstracta"
 Son un "Contrato": las clases que **implementan** a una interfaz deben implementar sus métodos.  
 Ej: La interfaz "animal" podría incluir métodos como "moverse", "comer", etc. Todos los animales deben implementar esos métodos, pero todos lo hacen de forma distinta. 
@@ -97,7 +97,7 @@ Ej: La interfaz "animal" podría incluir métodos como "moverse", "comer", etc. 
 
 ---
 
-# Listeners
+## Listeners
 Esperan (*escuchan*) eventos generados por el usuario (clicks, etc.)  y ejecutan métodos como respuesta.  
 Implementan interfaces pre-definidas en el SDK (aunque se pueden crear interfaces propias).  
 Cada interfaz responde a un tipo de evento distinto (*OnClick*, *OnLongClick*, *onTextChange*, etc).
@@ -124,11 +124,12 @@ imagen.setOnClickListener(myListener);
 
 ---
 
-# Como Empezar
+## Como Empezar
 **onCreate ()**  
 Es uno de los métodos heredados de Activity, corresponde a una transición en el ciclo de vida. Es responsable de cargar el layout, obtener referencias a las Views se van a usar, y definir sus comportamientos.  
  
  --- 
+  
 ```java
 protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -144,3 +145,22 @@ protected void onCreate(Bundle savedInstanceState) {
     input.addTextChangedListener(escuchaTexto); 
 };
 ```
+ 
+---
+ 
+## Resources  
+<img src="allresources.png" img style="float: right;">  
+
+#### drawable  
+Almacena imagenes a las que accedemos mediante R.drawable.[nombre-sin-extension]
+
+#### values  
+Guarda strings (distintos idiomas) , definiciones de colores y estilos.
+ 
+---
+ 
+## Múltiples Layouts
+<img src="resources.png" img style="float: right;">  
+
+Podemos definir múltiples layouts para una misma activity, y Android seleccionará el más adecuado para el dispositivo que la esté corriendo.  
+Todos los layouts deben tener las mismas views con la misma Id, sino tendremos una excepción en tiempo de ejecución cuando querramos obtener referencias a una View inexistente.
